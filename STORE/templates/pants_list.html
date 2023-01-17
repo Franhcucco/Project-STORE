@@ -1,0 +1,21 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+{%for pants in pants%}
+
+  <div class="card" style="width: 18rem;">
+    <img src="https://d28hi93gr697ol.cloudfront.net/64c12ccb-f061-7216/img/Producto/3c1bc2b9-b668-e362-4214-3e71a0e101a6/green-1-6363193390fa1.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{pants.name}}</h5>
+      <p class="card-text">Precio: {{pants.pesos}}  {{pants.price}}</p>
+      <p class="card-text">Talle: {{pants.size}}</p>
+      {%if pants.stock == True%}
+        <p>Hay Stock</p>
+      {%else%}
+        <p>Sin Stock</p>
+      {%endif%}
+    </div>
+  </div>
+  {%endfor%}
+{% endblock %}

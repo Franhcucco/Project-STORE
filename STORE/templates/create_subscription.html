@@ -1,0 +1,20 @@
+{% extends 'template.html' %}
+
+{% block content %}
+    
+    {% if form %}
+    <n1>A continuacion podra generar su suscripcion: </n1>
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <table>
+                {{form.as_table}}     
+            </table>
+
+            <input type="submit" value="Suscribirse">
+            <button type="button" class="btn btn-success">Success</button>
+        </form>
+    {%else%}
+        <n>Suscripcion Realizada</n>
+    {%endif%}
+{% endblock %}

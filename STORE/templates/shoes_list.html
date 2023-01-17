@@ -1,0 +1,21 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+{%for shoes in shoes%}
+
+  <div class="card" style="width: 18rem;">
+    <img src="https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/10_2/0/108/78/7097954.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{shoes.name}}</h5>
+      <p class="card-text">Precio: {{shoes.pesos}}  {{shoes.price}}</p>
+      <p class="card-text">Talle: {{shoes.size}}</p>
+      {%if shoes.stock == True%}
+        <p>Hay Stock</p>
+      {%else%}
+        <p>Sin Stock</p>
+      {%endif%}
+    </div>
+  </div>
+  {%endfor%}
+{% endblock %}

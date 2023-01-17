@@ -1,0 +1,22 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+{% for tShirts in tShirts %}
+
+  <div class="card" style="width: 18rem;">
+    <img src="https://pimpumpills.com/home/wp-content/uploads/2022/11/Remera-Small-Things.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{tShirts.name}}</h5>
+      <p class="card-text">Precio: {{tShirts.pesos}}  {{tShirts.price}}</p>
+      <p class="card-text">Talle: {{tShirts.size}}</p>
+      {%if tShirts.stock == True%}
+        <p>Hay Stock</p>
+      {%else%}
+        <p>Sin Stock</p>
+      {%endif%}
+    </div>
+  </div>
+  {%endfor%}
+
+{% endblock %}

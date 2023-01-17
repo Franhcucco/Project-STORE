@@ -1,0 +1,56 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+{%for p in p %}
+
+  <div class="card" style="width: 18rem;">
+    <img src="https://d28hi93gr697ol.cloudfront.net/64c12ccb-f061-7216/img/Producto/3c1bc2b9-b668-e362-4214-3e71a0e101a6/green-1-6363193390fa1.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{p.name}}</h5>
+      <p class="card-text">Precio: {{p.pesos}}  {{p.price}}</p>
+      <p class="card-text">Talle: {{p.size}}</p>
+      {%if p.stock == True%}
+        <p>Hay Stock</p>
+      {%else%}
+        <p>Sin Stock</p>
+      {%endif%}
+    </div>
+  </div>
+{%endfor%}
+
+{%for s in s %}
+
+  <div class="card" style="width: 18rem;">
+    <img src="https://grimoldimediamanager.grimoldi.com/MediaFiles/Grimoldi/2021/10_2/0/108/78/7097954.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{s.name}}</h5>
+      <p class="card-text">Precio: {{s.pesos}}  {{s.price}}</p>
+      <p class="card-text">Talle: {{s.size}}</p>
+      {%if s.stock == True%}
+        <p>Hay Stock</p>
+      {%else%}
+        <p>Sin Stock</p>
+      {%endif%}
+    </div>
+  </div>
+{%endfor%}
+
+{% for t in t %}
+
+  <div class="card" style="width: 18rem;">
+    <img src="https://pimpumpills.com/home/wp-content/uploads/2022/11/Remera-Small-Things.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{t.name}}</h5>
+      <p class="card-text">Precio: {{t.pesos}}  {{t.price}}</p>
+      <p class="card-text">Talle: {{t.size}}</p>
+      {%if t.stock == True%}
+        <p>Hay Stock</p>
+      {%else%}
+        <p>Sin Stock</p>
+      {%endif%}
+    </div>
+  </div>
+{%endfor%}
+
+{% endblock %}
